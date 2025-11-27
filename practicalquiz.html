@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICAL QUIZ</title>
+</head>
+<body>
+      <h1>Set Your Alarm</h1>
+     <section class="example">
+        <h2>Set Your Alarm</h2>
+        <h3>School start at 7:00 AM. Don't be LATE!</h3>
+        
+         <label for="alarmInput" style="display:none">Set your alarm</label>
+    <select id="alarmInput" aria-label="Select amount">
+        <option value="" disabled selected>Set your alarm</option>
+        <option value="Sleep more"> 4:00 AM </option>
+        <option value="early bird">4:30 AM</option>
+        <option value="too early">5:00 AM</option>
+        <option value="early">5:30 AM</option>
+        <option value="kinda">6:00 AM</option>
+          <option value="late">6:30 AM</option>
+    </select>
+    
+    <button id="setBtn">Set</button>
+    <div id="alarmResult"></div>
+ 
+
+    <script>
+   
+
+
+const alarmInput = document.getElementById('alarmInput');
+const setBtn = document.getElementById('setBtn');
+const alarmResult = document.getElementById('alarmResult');
+
+setBtn.addEventListener('click', () => {
+    const choice = alarmInput.value;
+    const validNames = ['Sleep more','early bird','too early','early','kinda', 'late'];
+    if (!validNames.includes(choice)) {
+        alarmResult.textContent = 'Please choose a valid time from the list.';
+        alarmResult.style.color = 'crimson';
+        return;
+    }
+
+           
+         
+           if (choice === 'Sleep more') {
+            alert('You set the alarm to 4:00 AM');
+            alarmResult.textContent = 'WAY too early. You have all the time in the world.';
+            alarmResult.style.color = 'black';
+                
+            } else if (choice === 'early bird') {
+            alert('You set the alarm to 4:30 AM');
+            alarmResult.textContent = 'Still super early. No chance of being late.';
+            alarmResult.style.color = 'black';
+            
+            } else if (choice === 'too early') {
+            alert('You set the alarm to 5:00 AM');
+            alarmResult.textContent = 'Early and safe. You can relax.';
+            alarmResult.style.color = 'black';
+            
+            } else if (choice === 'early') {
+            alert('You set the alarm to 5:30 AM');
+            alarmResult.textContent = 'Plenty of time to get ready.';
+            alarmResult.style.color = 'black';
+            
+            } else if (choice === 'kinda') {
+            alert('You set the alarm to 6:00 AM');
+            alarmResult.textContent = 'Okay, still fine. You won’t be late if you move normally.';
+            alarmResult.style.color = 'black';
+            
+            } else if (choice === 'late') {
+            alert('You set the alarm to 6:30 AM');
+            alarmResult.textContent = 'Danger zone. You might be late depending on how fast you move.';
+            alarmResult.style.color = 'black';
+            }
+
+
+           let output = '';
+    for (let i = 1; i <= num; i++) {
+       output += `counting: ${i}\n`;
+    }   
+    countResult.style.color = 'green'
+    countResult.textContent = output;
+     
+        });
+             const NumInput = document.getElementById('NumInput');
+const countBtn = document.getElementById('countBtn');
+const countResult = document.getElementById('countResult');
+
+countBtn.addEventListener('click', () => {
+    const num = Number(NumInput.value);   
+    if (isNaN(num) || num < 1 || num > 1000) {
+        countResult.innerHTML = 'Please enter a valid number between 1 and 100.';
+        countResult.style.color = 'crimson';
+        return;
+    }
+    let output = '';
+    for (let i = 1; i <= num; i++) {
+       output += `counting: ${i}\n`;
+    }   
+    countResult.style.color = 'green'
+    countResult.textContent = output;
+});
+    </script>
+</body>
+</html>

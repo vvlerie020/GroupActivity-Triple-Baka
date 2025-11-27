@@ -29,7 +29,7 @@
             const temp = Number(tempInput.value);
             if (isNaN(temp)) {
                 tempResult.textContent = 'Please enter a valid temperature.';
-                tempResult.style.color = 'crimson';     
+                tempResult.style.color = 'crimson';
                 return;
             }
 
