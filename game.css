@@ -1,12 +1,55 @@
- body {
+body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            text-align: center;
+            background-image: url(house.jpg); 
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover; background-attachment: fixed; min-height: 100vh;
+          
         }
-        input, button {
+        
+        input, select, button {
             margin: 10px;
             padding: 10px;
+            font-size: 16px;
+            
+        }
+        
+        select {
+            min-width: 180px;
         }
         #hatchResult {
             margin-top: 20px;
             font-weight: bold;
+        }
+        img { display: inline-block; margin: 6px; max-width: 170px; height: auto; }
+        img[src="egg/green-removebg-preview.png"] {
+  width: 2000%;    /* or 120px, 50%, etc. */
+  height: 150px;
+}   
+
+        img[src="egg/meleyss-removebg-preview.png"] { 
+            width: 200px; height: 200px; max-width: none;
+        margin-bottom: -20px; }
+
+        img[src="bel.webp"] {
+            width: 90%; height: 150px; max-width: none;
+        }
+    img[src="dragons/meleys.png"] {
+          margin-bottom: -49px;
+          
+           
+        }
+        img[src="dragons/vhagarr.png"] {
+          margin-left: 65px;
+        }
+        img[src="dragons/dream.png"] {
+          margin-left: 54px;
+          
+        }
+         img[src="dragons/meleys.png"] {
+          margin-right: 54px;
+          
         }

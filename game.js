@@ -1,49 +1,47 @@
- const hatchInput = document.getElementById('hatchInput');
-        const hatchBtn = document.getElementById('hatchBtn');
-        const hatchResult = document.getElementById('hatchResult');
+const hatchInput = document.getElementById('hatchInput');
+const hatchBtn = document.getElementById('hatchBtn');
+const hatchResult = document.getElementById('hatchResult');
 
-        hatchBtn.addEventListener('click', () => {
-            const amount = Number(hatchInput.value);
-            if (isNaN(amount) || ![50, 100, 150, 200, 250].includes(amount)) {
-                hatchResult.textContent = 'Please enter a valid amount: 50, 100, 150, 200, or 250.';
-                hatchResult.style.color = 'crimson';
-                return;
+hatchBtn.addEventListener('click', () => {
+    const choice = hatchInput.value;
+    const validNames = ['Thaloryn the Azure','Maelryth Red-Shell','Sylvrax the Silver','Vyr’thalen Green-Shell','Vhalgor the Black'];
+    if (!validNames.includes(choice)) {
+        hatchResult.textContent = 'Please choose a valid dragon from the list.';
+        hatchResult.style.color = 'crimson';
+        return;
+    }
+
+            // Buy a dragon egg and hatch 
+           
+         
+           if (choice === 'Thaloryn the Azure') {
+            alert('You bought a Thaloryn the Azure egg!');
+            hatchResult.textContent = 'Congratulations — you hatched Dreamfyre!';
+            hatchResult.style.color = 'white';
+                
+            } else if (choice === 'Maelryth Red-Shell') {
+            alert('You bought a Maelryth Red-Shell egg!');
+            hatchResult.textContent = 'Congratulations — you hatched Meleys';
+            hatchResult.style.color = 'white';
+            
+            } else if (choice === 'Sylvrax the Silver') {
+            alert('You bought a Sylvrax the Silver egg!');
+            hatchResult.textContent = 'Congratulations — you hatched Meraxes';
+            hatchResult.style.color = 'white';
+            
+            } else if (choice === 'Vyr’thalen Green-Shell') {
+            alert('You bought a Vyr’thalen Green-Shell egg!');
+            hatchResult.textContent = 'Congratulations — you hatched Vhagar';
+            hatchResult.style.color = 'white';
+            
+            } else if (choice === 'Vhalgor the Black') {
+            alert('You bought a Vhalgor the Black egg!');
+            hatchResult.textContent = 'Congratulations — you hatched Balerion';
+            hatchResult.style.color = 'white';
             }
 
-            // Define probabilities based on amount
-            let probabilities;
-            if (amount === 50) {
-                probabilities = { common: 97, uncommon: 2, rare: 0.5, ultrarare: 0.4, legendary: 0.1 };
-            } else if (amount === 100) {
-                probabilities = { common: 2, uncommon: 97, rare: 0.5, ultrarare: 0.4, legendary: 0.1 };
-            } else if (amount === 150) {
-                probabilities = { common: 0, uncommon: 5, rare: 90, ultrarare: 4, legendary: 1 };
-            } else if (amount === 200) {
-                probabilities = { common: 0, uncommon: 0, rare: 25, ultrarare: 74, legendary: 1 };
-            } else if (amount === 250) {
-                probabilities = { common: 0, uncommon: 0, rare: 35, ultrarare: 40, legendary: 15 };
-            }
 
-            // Generate a random number between 0 and 100
-            const rand = Math.random() * 100;
-            let cumulative = 0;
-            let hatchedPet = '';
+           
 
-            for (const [pet, prob] of Object.entries(probabilities)) {
-                cumulative += prob;
-                if (rand <= cumulative) {
-                    hatchedPet = pet;
-                    break;
-                }
-            }
-
-            // Capitalize the pet name
-            const displayPet = hatchedPet.charAt(0).toUpperCase() + hatchedPet.slice(1);
-
-            // Display result
-            hatchResult.textContent = `You hatched a ${displayPet} pet!`;
-            hatchResult.style.color = 'green';
-
-            // Window alert
-            alert(`You hatched a ${displayPet} pet!`);
+     
         });
