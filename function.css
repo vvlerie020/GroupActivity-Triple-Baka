@@ -1,0 +1,23 @@
+#num1, #num2 {
+    color: rgb(86, 134, 24);
+    background-color: aqua;
+    border-color: blueviolet;
+}
+#sub1, #sub2 {
+    color: rgb(228, 228, 228);
+    background-color: rgb(133, 65, 211);
+    border-color: blueviolet;
+}
+#mul1, #mul2 {
+    color: rgb(54, 85, 13);
+    background-color: rgb(252, 169, 44);
+    border-color: blueviolet;
+}
+#div1, #div2 {
+    color: rgb(243, 243, 243);
+    background-color: rgb(12, 102, 102);
+    border-color: blueviolet;
+}
+body {
+    text-align: center;
+}
