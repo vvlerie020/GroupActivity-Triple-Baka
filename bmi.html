@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <style>
+       body {
+            text-align: center;
+        }
+        .bmi-calculator {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .bmi-calculator label {
+            margin-bottom: 10px;
+        }
+        .bmi-calculator input {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+   <h1>BMI CALCULATOR</h1>
+    <div class="b">
+        <label for="w">Weight (kg):</label>
+        <input type="number" id="w" placeholder="Enter your weight in kg">
+ </div>
+  <div class="m">
+        <label for="h">Height (cm):</label>
+        <input type="number" id="h" placeholder="Enter your height in cm">
+ </div>
+  <div class="i">
+        <button id="calculateBtn">Calculate BMI</button>
+        <input type="text" id="bmiOutput" placeholder="Your BMI will appear here" readonly>
+ <div class="c">
+        <p class="result" id="result" aria-live="polite"></p>
+    </div>
+
+   <script>
+    const h = document.getElementById('h');
+const w = document.getElementById('w');
+const bmi = document.getElementById('bmiOutput')      
+      
+      function BMI(height, weight){
+            return weight / (height ** 2) 
+        }
+        console.log("BMI is:" + BMI(1.50, 70)) 
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const height = parseFloat(h.value) / 100; 
+            const weight = parseFloat(w.value);
+            const result = BMI(height, weight);
+            bmi.value = result.toFixed(2);
+        });
+   </script>
