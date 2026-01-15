@@ -23,6 +23,7 @@
     background: #fff;
     padding: 0;              /* WALANG padding */
     display: flex;
+    position: relative;
 }
 
 /* Portrait game screens */
@@ -40,6 +41,16 @@
     position: relative;
     overflow: hidden;
 }
+
+.start-button {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 15px 50px;
+    font-size: 15px;    opacity: 0.8;}
 
 /* When a character is chosen, keep it contained and centered */
 .selected-character {
